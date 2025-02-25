@@ -4,7 +4,7 @@ import java.io.Serializable;
 public class User implements Serializable {
 	private String name; //名前
 	private String pass; //パスワード
-	
+
 	public User() {}
 	public User(String name, String pass) {
 		this.name = name;

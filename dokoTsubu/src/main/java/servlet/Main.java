@@ -21,7 +21,7 @@ public class Main extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//つぶやきリストからアプリケーションスコープから取得
-		ServletContext applicayion = this.getServletContext();
+		ServletContext application = this.getServletContext();
 		List<Mutter> mutterList = (List<Mutter>)application.getAttribute("mutterList");
 		//取得できなかった場合は、つぶやきリストを新規作成して
 		//アプリケーションスコープに保存
@@ -34,6 +34,7 @@ public class Main extends HttpServlet {
 		//セッションスコープからユーザー情報を取得
 		HttpSession session = request.getSession();
 		User loginUser = (User)session.getAttribute("loginUser");
+		
 		if (loginUser == null) { //ログインしていない場合
 			//リダイレクト
 			response.sendRedirect("index.jsp");
