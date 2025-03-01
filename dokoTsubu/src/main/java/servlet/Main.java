@@ -55,7 +55,7 @@ public class Main extends HttpServlet {
 		if (text != null && text.length() != 0) {
 			//アプリケーションスコープに保存されたつぶやきリストを取得
 			ServletContext application = this.getServletContext();
-			List<Mutter> mutterList = (List<Mutter>)application.getAttribute("loginUser");
+			List<Mutter> mutterList = (List<Mutter>)application.getAttribute("mutterList");
 			
 			//セッションスコープに保存されたユーザー情報を取得
 			HttpSession session = request.getSession();
